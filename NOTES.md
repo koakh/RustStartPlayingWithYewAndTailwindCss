@@ -272,4 +272,6 @@ $ trunk serve
 
 ### Vscode Debug Yew
 
+- [What is the state of debugging? · Issue #1981 · rustwasm/wasm-bindgen](https://github.com/rustwasm/wasm-bindgen/issues/1981)
+
 seems isn't possible yet to debug yew wasm projects......
