@@ -272,3 +272,4 @@ $ trunk serve
 
 ### Vscode Debug Yew
 
+seems isn't possible yet to debug yew wasm projects......
