@@ -275,3 +275,10 @@ $ trunk serve
 - [What is the state of debugging? · Issue #1981 · rustwasm/wasm-bindgen](https://github.com/rustwasm/wasm-bindgen/issues/1981)
 
 seems isn't possible yet to debug yew wasm projects......
+
+## Adding Tauri to a Yew Project
+
+- [Create a desktop app in Rust using Tauri and Yew](https://dev.to/stevepryde/create-a-desktop-app-in-rust-using-tauri-and-yew-2bhe)
+
+$ cargo install tauri-cli --locked --version ^1.0.0-rc
+$ cargo tauri init
