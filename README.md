@@ -1,6 +1,6 @@
 # README
 
-![image](assets/2022-03-17-21-34-39.png)
+![image](assets/2022-03-21-21-12-43.png)
 
 ## Rust Yew, Tauri, and TailwindCss Starter Project
 
