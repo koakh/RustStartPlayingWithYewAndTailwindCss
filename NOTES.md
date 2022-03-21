@@ -20,6 +20,7 @@
   - [VSCode Debug and Settings](#vscode-debug-and-settings)
     - [Vscode Tailwind Intellisense](#vscode-tailwind-intellisense)
     - [Vscode Debug Yew](#vscode-debug-yew)
+  - [Adding Tauri to a Yew Project](#adding-tauri-to-a-yew-project)
 
 ## Links
 
@@ -275,10 +276,74 @@ $ trunk serve
 - [What is the state of debugging? · Issue #1981 · rustwasm/wasm-bindgen](https://github.com/rustwasm/wasm-bindgen/issues/1981)
 
 seems isn't possible yet to debug yew wasm projects......
-
 ## Adding Tauri to a Yew Project
 
 - [Create a desktop app in Rust using Tauri and Yew](https://dev.to/stevepryde/create-a-desktop-app-in-rust-using-tauri-and-yew-2bhe)
+- [Build smaller, faster, and more secure desktop applications with a web frontend | Tauri Studio](https://tauri.studio/)
+- [Get started making desktop apps using Rust and React](https://kent.medium.com/get-started-making-desktop-apps-using-rust-and-react-78a7e07433ce)
+- [Tauri &amp; ReactJS - Creating Modern Desktop Apps](https://www.youtube.com/watch?v=BbZmLXBDGnU)
 
+```shell
 $ cargo install tauri-cli --locked --version ^1.0.0-rc
+$ cd yew-app/
+# init a Tauri inside the React app directory structure
 $ cargo tauri init
+What is your app name?: yew-app
+What should the window title be?: YewTauriApp
+Where are your web assets (HTML/CSS/JS) located, relative to the "<current dir>/src-tauri/tauri.conf.json" file that will be created?: yew-app
+What is the url of your dev server?: [localhost:8080](http://localhost:8080)
+
+# must add protocol http://
+
+# check all of the installation details.
+$ cargo tauri info
+...
+App
+  tauri - 1.0.0-rc.4 (no lockfile)
+  tauri-build - no manifest (no lockfile)
+  tao - no manifest (no lockfile)
+  wry - no manifest (no lockfile)
+  build-type - bundle
+  CSP - unset
+  distDir - yew-app
+  devPath - localhost:8080
+package.json not found
+```
+
+> package.json not found - we don't need package.json, opted by cargo and rust tooling
+
+```json
+  "build": {
+    "distDir": "yew-app",
+    "devPath": "localhost:8080",
+    "beforeDevCommand": "",
+    "beforeBuildCommand": ""
+  },
+```
+
+with
+
+```json
+  "build": {
+    "distDir": "yew-app",
+    "devPath": "http://localhost:8080",
+    "beforeDevCommand": "cd yew-app && trunk serve",
+    "beforeBuildCommand": "cd yew-app && trunk build",
+    "withGlobalTauri": true
+  },
+```
+
+```shell
+$ cargo tauri dev
+#$ cargo tauri build
+```
+
+> Once Rust has finished building, the webview opens, displaying your web app. You can make changes to your web app, and if your tooling enables it, the webview should update automatically, just like a browser. When you make changes to your Rust files, they are rebuilt automatically, and your app automatically 
+> 
+> restarts.
+
+add do make file
+
+"tauri:dev": "cargo tauri dev",
+"tauri": "tauri",
+"bundle": "tauri build"

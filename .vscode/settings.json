@@ -1,6 +1,10 @@
 {
   "cSpell.words": [
-    "onclick"
+    "Bootstrapper",
+    "fullscreen",
+    "icns",
+    "onclick",
+    "tauri"
   ],
   "tailwindCSS.includeLanguages": {
     "rust": "rs"
