@@ -55,7 +55,7 @@ impl Component for Model {
       <div class={classes!("m-4 p-4  text-center bg-blue-100 border-blue-300 border-2 rounded-xl".to_string())}>
         // use all classes in same line with format! or .to_string()
         <p class={classes!("text-red text-4xl font-bold underline uppercase".to_string())}>
-          {"Tailwind Css YEW Starter Project"}
+          {"Yew, Tauri, and TailwindCss Starter Project"}
         </p>
         <button class={classes!(button_class.clone())} onclick={link.callback(|_| Msg::AddOne)}>{ "+1" }</button>
         <button class={classes!(button_class.clone())} onclick={link.callback(|_| Msg::SubOne)}>{ "-1" }</button>

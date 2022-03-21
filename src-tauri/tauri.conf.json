@@ -55,9 +55,9 @@
     },
     "windows": [
       {
-        "title": "YewTauriApp",
+        "title": "Yew, Tauri, and TailwindCss Starter Project",
         "width": 800,
-        "height": 600,
+        "height": 338,
         "resizable": false,
         "fullscreen": false
       }
