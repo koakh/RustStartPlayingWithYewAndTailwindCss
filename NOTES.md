@@ -325,7 +325,7 @@ with
 
 ```json
   "build": {
-    "distDir": "yew-app",
+    "distDir": "../yew-app/dist",
     "devPath": "http://localhost:8080",
     "beforeDevCommand": "cd yew-app && trunk serve",
     "beforeBuildCommand": "cd yew-app && trunk build",
@@ -334,11 +334,14 @@ with
 ```
 
 ```shell
+$ cargo tauri build
+# above will compile the missing dependencies like
+   Compiling javascriptcore-rs v0.16.0
+
 $ cargo tauri dev
-#$ cargo tauri build
 ```
 
-> Once Rust has finished building, the webview opens, displaying your web app. You can make changes to your web app, and if your tooling enables it, the webview should update automatically, just like a browser. When you make changes to your Rust files, they are rebuilt automatically, and your app automatically 
+> Once Rust has finished building, the webview opens, displaying your web app. You can make changes to your web app, and if your tooling enables it, the webview should update automatically, just like a browser. When you make changes to your Rust files, they are rebuilt automatically, and your app automatically
 > 
 > restarts.
 

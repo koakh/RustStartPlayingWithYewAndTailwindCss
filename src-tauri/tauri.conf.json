@@ -4,7 +4,7 @@
     "version": "0.1.0"
   },
   "build": {
-    "distDir": "yew-app",
+    "distDir": "../yew-app/dist",
     "devPath": "http://localhost:8080",
     "beforeDevCommand": "cd yew-app && trunk serve",
     "beforeBuildCommand": "cd yew-app && trunk build",
